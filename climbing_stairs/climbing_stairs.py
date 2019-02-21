@@ -45,7 +45,7 @@ def climbing_stairs(n, cache=None):
         steps = climbing_stairs(
             n - 1, cache) + climbing_stairs(n - 2, cache) + climbing_stairs(n - 3, cache)
         cache[n] = steps
-        print(f"step {n}: {cache[n]}")
+        # print(f"step {n}: {cache[n]}")
         return steps
 
 
