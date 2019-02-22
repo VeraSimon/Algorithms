@@ -31,16 +31,21 @@ def making_change(amount, denominations):
         #     cache[n] = steps
         #     return steps
 
-        if amount_left <= 4:
+        if amount_left < 0:
+            return 0
+        elif amount_left == 0:
             return 1
         elif amount_left in cache:
             return cache[amount_left]
         else:
-            ways = 0
-            for i in denominations:
-                # print(i)
-                ways += change_calc(amount_left - i)
-                # print(ways)
+            # ways = 0
+            # for i in denominations:
+            #     # print(i)
+            #     ways += change_calc(amount_left - i)
+            #     # print(ways)
+            # cache[amount_left] = ways
+            # return ways
+            ways = sum([change_calc(amount_left - i) for i in denominations])
             cache[amount_left] = ways
             return ways
 
