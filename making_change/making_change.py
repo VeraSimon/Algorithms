@@ -27,10 +27,8 @@ def making_change(amount, denominations):
 
     def change_calc(amount_left):
         # else:
-        #     steps = climbing_stairs(
-        #         n - 1, cache) + climbing_stairs(n - 2, cache) + climbing_stairs(n - 3, cache)
+        #     steps = climbing_stairs(n - 1, cache) + climbing_stairs(n - 2, cache) + climbing_stairs(n - 3, cache)
         #     cache[n] = steps
-        #     # print(f"step {n}: {cache[n]}")
         #     return steps
 
         if amount_left <= 4:
@@ -40,9 +38,10 @@ def making_change(amount, denominations):
         else:
             ways = 0
             for i in denominations:
-                print(i)
+                # print(i)
                 ways += change_calc(amount_left - i)
-                print(ways)
+                # print(ways)
+            cache[amount_left] = ways
             return ways
 
     return change_calc(amount)
