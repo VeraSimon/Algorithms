@@ -30,9 +30,8 @@ def find_max_profit(prices):
     #     2 - 3800 = -3798
 
     # Attempt 1: iterative
-    # O(n log n)? It's passing over (almost all of) the array once in the outer
-    # loop, then the sub array gets shorter by one each iteration of the outer
-    # loop.
+    # O(n^2). The inner loop is going through the entire passed array (-1) at
+    # least once, and so it the outer loop.
     # The `profit` initialization value gets checked twice, but :shrug:
     profit = prices[1] - prices[0]
     for i in range(len(prices) - 1):
